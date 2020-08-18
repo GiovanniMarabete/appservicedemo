@@ -1,0 +1,27 @@
+name: Deploy ASP.NET
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  AZURE_WEBAPP_NAME: klweb18082020
+  AZURE_WEBAPP_PATH: '.'
+  DOTNET_VERSION: 3.1.201
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout
+      - name: Login via Azure:
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS}}
+      - name: SETUP .NET CORE
+      
+
+
+
+
